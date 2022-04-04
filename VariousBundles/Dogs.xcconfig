@@ -1,0 +1,13 @@
+//
+//  Dogs.xcconfig
+//  VariousBundles
+//
+//  Created by Rinat Abidullin on 04.04.2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_BUNDLE_IDENTIFIER = com.example.dogs
+DISPLAY_NAME = Dogs
+APP_ICON_ASSET_NAME = AppIcon-dog
