@@ -12,6 +12,7 @@
 		559F841227FB2F40004A03B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F841127FB2F40004A03B0 /* ViewController.swift */; };
 		559F841727FB2F42004A03B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559F841627FB2F42004A03B0 /* Assets.xcassets */; };
 		559F841A27FB2F42004A03B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559F841827FB2F42004A03B0 /* LaunchScreen.storyboard */; };
+		559F844327FB6ABF004A03B0 /* AnimalSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559F844227FB6ABF004A03B0 /* AnimalSecrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		559F841B27FB2F42004A03B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559F842127FB44F1004A03B0 /* Cats.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Cats.xcconfig; sourceTree = "<group>"; };
 		559F842227FB46E1004A03B0 /* Dogs.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dogs.xcconfig; sourceTree = "<group>"; };
+		559F844227FB6ABF004A03B0 /* AnimalSecrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalSecrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		559F840C27FB2F40004A03B0 /* VariousBundles */ = {
 			isa = PBXGroup;
 			children = (
+				559F844227FB6ABF004A03B0 /* AnimalSecrets.swift */,
 				559F840D27FB2F40004A03B0 /* AppDelegate.swift */,
 				559F840F27FB2F40004A03B0 /* SceneDelegate.swift */,
 				559F841127FB2F40004A03B0 /* ViewController.swift */,
@@ -75,6 +78,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 559F841E27FB2F42004A03B0 /* Build configuration list for PBXNativeTarget "VariousBundles" */;
 			buildPhases = (
+				559F844127FB64DD004A03B0 /* Generate Credential File */,
 				559F840627FB2F40004A03B0 /* Sources */,
 				559F840727FB2F40004A03B0 /* Frameworks */,
 				559F840827FB2F40004A03B0 /* Resources */,
@@ -133,12 +137,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		559F844127FB64DD004A03B0 /* Generate Credential File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Credential File";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/VariousBundles/AnimalSecrets.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Чтение ключа из репозитория и подготовка содержимого файла с переменной для хранения ключа\n# реализовано в утилите animalsecrets (см. репозиторий \n# https://github.com/RinatAbidullin/AnimalSecretsCLI)\nanimalsecrets generate --git-source https://github.com/RinatAbidullin/AnimalSecretsRepo > VariousBundles/AnimalSecrets.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		559F840627FB2F40004A03B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				559F841227FB2F40004A03B0 /* ViewController.swift in Sources */,
+				559F844327FB6ABF004A03B0 /* AnimalSecrets.swift in Sources */,
 				559F840E27FB2F40004A03B0 /* AppDelegate.swift in Sources */,
 				559F841027FB2F40004A03B0 /* SceneDelegate.swift in Sources */,
 			);
